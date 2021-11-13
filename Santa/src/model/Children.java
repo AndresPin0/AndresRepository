@@ -12,7 +12,7 @@ public class Children implements Comparable<Children> {
 	private String city;
 	private String country;
 	private String christmasGift;
-	private String typeKid;
+	private int typeKid;
 
 	/**
 	 * Children's contructor
@@ -26,7 +26,7 @@ public class Children implements Comparable<Children> {
 	 * @param christmasGift
 	 */
 	public Children(String name, String lastName, int age, String country, String city, String address,
-			String christmasGift, String typeKid) {
+			String christmasGift, int typeKid) {
 		this.name = name;
 		this.lastName = lastName;
 		this.age = age;
@@ -146,7 +146,7 @@ public class Children implements Comparable<Children> {
 	 * 
 	 * @return typeKid getTypeKid
 	 */
-	public String getTypeKid() {
+	public int getTypeKid() {
 		return typeKid;
 	}
 
@@ -154,21 +154,28 @@ public class Children implements Comparable<Children> {
 	 * 
 	 * @param typeKid
 	 */
-	public void setTypeKid(String typeKid) {
-
+	public void setTypeKid(int typeKid) {
+		this.typeKid = typeKid;
 	}
 
 	@Override
 	public String toString() {
-		return "Name: " + name + "\nLast name: " + lastName + "\nAge: " + age + "\nCountry: " + country + "\nCity: "
+		return "\nName: " + name + "\nLast name: " + lastName + "\nAge: " + age + "\nCountry: " + country + "\nCity: "
 				+ city + "\nAddress: " + address + "\nchristmasGift: " + christmasGift + "\nType kid: " + typeKid
 				+ "\n";
 	}
 
 	@Override
 	public int compareTo(Children o) {
-		if (age < o.age) {
+		int msg = getAge() - o.getAge();
+
+		if (msg > 0) {
+			return 1;
+		} else if (msg < 0) {
+			return -1;
+		} else {
+			return 0;
 		}
-		return this.name.compareTo(o.name);
 	}
+
 }

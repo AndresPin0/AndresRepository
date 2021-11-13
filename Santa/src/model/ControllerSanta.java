@@ -27,10 +27,10 @@ public class ControllerSanta {
 	 */
 
 	public void newChild(String name, String lastName, int age, String address, String city, String country,
-			String christmasGift, String typeKid) {
-		if (typeKid.equalsIgnoreCase("GOOD")) {
+			String christmasGift, int typeKid) {
+		if (typeKid == 1) {
 			goodKids.add(new Children(name, lastName, age, country, city, address, christmasGift, typeKid));
-		} else if (typeKid.equalsIgnoreCase("BAD")) {
+		} else if (typeKid == 2) {
 			badKids.add(new Children(name, lastName, age, country, city, address, christmasGift, typeKid));
 		}
 	}
@@ -38,28 +38,36 @@ public class ControllerSanta {
 	/**
 	 * 
 	 * @param name
+	 * @param string TODO
+	 * @return alert
 	 */
-	public void moveChild(String name) {
+	public void moveChild(String name1) {
 		boolean flag = false;
-		String message = "It's not founded";
+		Children children = null;
 
-		for (int i = 0; i < goodKids.size(); i++) {
+		for (int i = 0; i < goodKids.size() && flag == false; i++) {
 
-			if (goodKids.get(i).equals(name)) {
-				Children children = goodKids.get(i);
-				goodKids.remove(children);
-				goodKids.add(children);
+			if (goodKids.get(i).getName().equals(name1)) {
+				children = goodKids.get(i);
+
 				flag = true;
-				message = "Founded";
-				System.out.println(message);
+				goodKids.remove(children);
+				badKids.add(children);
 
 			}
 		}
-		for (int i = 0; i < badKids.size() && flag == false; i++) {
-			Children children = badKids.get(i);
-			badKids.remove(children);
-			badKids.add(children);
-
+		for (int c = 0; c < badKids.size() && flag == false; c++) {
+			if (goodKids.get(c).getName().equals(name1)) {
+				children = badKids.get(c);
+				goodKids.remove(children);
+				badKids.add(children);
+				flag = true;
+			}
+		}
+		if (children == null) {
+			System.out.println("This child doesn't exist, please add a child first, or search again");
+		} else {
+			System.out.println("This child has been changed");
 		}
 	}
 
@@ -68,14 +76,14 @@ public class ControllerSanta {
 	 * @param typeKid
 	 * 
 	 */
-	public void showChildren(String typeKid) {
-		if (typeKid.equalsIgnoreCase("GOOD")) {
+	public void showChildren(int lista) {
+		if (lista == 1) {
 			for (int i = 0; i < goodKids.size(); i++) {
 				System.out.println(goodKids.get(i).toString());
 			}
-		} else if (typeKid.equalsIgnoreCase("BAD")) {
+		} else if (lista == 2) {
 			for (int i = 0; i < badKids.size(); i++) {
-				System.out.println(goodKids.get(i).toString());
+				System.out.println(badKids.get(i).toString());
 			}
 		}
 	}

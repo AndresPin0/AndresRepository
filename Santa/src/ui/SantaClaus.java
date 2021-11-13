@@ -87,8 +87,8 @@ public class SantaClaus {
 		System.out.println("What's the christmas gift does the kind want? ");
 		String gift = sc.nextLine();
 
-		System.out.println("What's the type of the kid? (GOOD/BAD)");
-		String typeKid = sc.nextLine();
+		System.out.println("What's the type of the kid? \n(1)GOOD\n(2)BAD");
+		int typeKid = sc.nextInt();
 
 		control.newChild(name, lastName, age, country, city, address, gift, typeKid);
 
@@ -101,8 +101,8 @@ public class SantaClaus {
 	 */
 	public void moveChild() {
 		System.out.println("What's the name of the child you want to move?");
-		String name = sc.nextLine();
-		control.moveChild(name);
+		String name1 = sc.nextLine();
+		control.moveChild(name1);
 		System.out.println("This kid has been changed");
 	}
 
@@ -110,8 +110,9 @@ public class SantaClaus {
 	 * This method is to show the list of Goodkids, or badkids
 	 */
 	public void showList() {
-		System.out.println("What list do you want to see? (GOOD/BAD)");
-		String lista = sc.nextLine();
+		System.out.println("What list do you want to see? \n(1)GOOD\n(2)BAD");
+		int lista = sc.nextInt();
+
 		control.showChildren(lista);
 
 	}
