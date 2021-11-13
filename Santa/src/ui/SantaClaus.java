@@ -3,14 +3,25 @@ package ui;
 import java.util.Scanner;
 import model.ControllerSanta;
 
+/**
+ * @author Andres Pino
+ */
 public class SantaClaus {
 	private ControllerSanta control;
 	static Scanner sc = new Scanner(System.in);
 
+	/**
+	 * Constructor of SantaClaus
+	 */
 	public SantaClaus() {
 		control = new ControllerSanta();
 	}
 
+	/**
+	 * Main method
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SantaClaus santa = new SantaClaus();
 		int option = 0;
@@ -22,13 +33,17 @@ public class SantaClaus {
 			sc.nextLine();
 			santa.menu(option);
 		} while (option != 0);
-		System.out.println("See you later!");
 
 	}// Main
 
+	/**
+	 * 
+	 * @param option
+	 */
 	public void menu(int option) {
 		switch (option) {
 		case 0:
+			System.out.println("See you later!");
 			System.exit(0);
 			break;
 		case 1:
@@ -44,48 +59,59 @@ public class SantaClaus {
 			System.out.println("This option is invalid");
 			break;
 		}
-	}
+	}// menu
 
+	/**
+	 * This method is to add a child, the user enter all the values, then it take
+	 * the newChild method to add that child to the ArrayList
+	 */
 	public void addChild() {
-
-		// String name = "";
-		// String lastName = "";
-		// int age = 0;
-		// String address = "";
-		// String city = "";
-		// String country = "";
-		// String gif = "";
-		// String typeKid = "";
-
 		System.out.println("Enter the name of the child: ");
 		String name = sc.nextLine();
+
 		System.out.println("Enter the last name of the child: ");
 		String lastName = sc.nextLine();
+
 		System.out.println("Enter the age of the child: ");
 		int age = sc.nextInt();
 		sc.nextLine();
-		System.out.println("Enter the address of the child: ");
-		String address = sc.nextLine();
-		System.out.println("Enter the city where the child lives: ");
-		String city = sc.nextLine();
 		System.out.println("Enter the country where the child lives: ");
 		String country = sc.nextLine();
+
+		System.out.println("Enter the city where the child lives: ");
+		String city = sc.nextLine();
+
+		System.out.println("Enter the address of the child: ");
+		String address = sc.nextLine();
+
 		System.out.println("What's the christmas gift does the kind want? ");
-		String gif = sc.nextLine();
+		String gift = sc.nextLine();
+
 		System.out.println("What's the type of the kid? (GOOD/BAD)");
 		String typeKid = sc.nextLine();
 
-		control.newChild(name, lastName, age, address, city, country, gif, typeKid);
+		control.newChild(name, lastName, age, country, city, address, gift, typeKid);
 
 		System.out.println("This kid has been added successfully");
+	}// addChild
 
-	}
-
+	/**
+	 * 
+	 */
 	public void moveChild() {
-
+		System.out.println("What's the name of the child you want to move?");
+		String name = sc.nextLine();
+		control.moveChild(name);
+		System.out.println("This kid has been changed");
 	}
 
+	/**
+	 * 
+	 */
 	public void showList() {
+		System.out.println("What list do you want to see?");
+		String lista = sc.nextLine();
+		control.showChildren(lista);
 
 	}
 

@@ -1,9 +1,13 @@
 package model;
-public class Children implements Comparable<Children>{
+
+/**
+ * Children class
+ */
+public class Children implements Comparable<Children> {
 
 	private String name;
 	private String lastName;
-	private int edad;
+	private int age;
 	private String address;
 	private String city;
 	private String country;
@@ -20,10 +24,11 @@ public class Children implements Comparable<Children>{
 	 * @param country
 	 * @param christmasGift
 	 */
-	public Children(String name, String lastName, int edad, String address, String city, String country, String christmasGift, String typeKid) {
+	public Children(String name, String lastName, int age, String country, String city, String address,
+			String christmasGift, String typeKid) {
 		this.name = name;
 		this.lastName = lastName;
-		this.edad = edad;
+		this.age = age;
 		this.address = address;
 		this.city = city;
 		this.country = country;
@@ -32,14 +37,10 @@ public class Children implements Comparable<Children>{
 
 	}
 
-	public String getTypeKid(){
-		return typeKid;
-	}
-	
-	public void setTypeKid(String typeKid){
-
-	}
-
+	/**
+	 * 
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
@@ -64,18 +65,42 @@ public class Children implements Comparable<Children>{
 		this.lastName = lastName;
 	}
 
-	public String getAddress() {
-		return address;
+	/**
+	 * 
+	 * @return edad
+	 */
+	public int getAge() {
+		return age;
 	}
 
 	/**
 	 * 
-	 * @param address
+	 * @param edad
 	 */
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAge(int edad) {
+		this.age = age;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
+	public String getCountry() {
+		return country;
+	}
+
+	/**
+	 * 
+	 * @param country
+	 */
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
 	public String getCity() {
 		return city;
 	}
@@ -88,16 +113,20 @@ public class Children implements Comparable<Children>{
 		this.city = city;
 	}
 
-	public String getCountry() {
-		return country;
+	/**
+	 * 
+	 * @return
+	 */
+	public String getAddress() {
+		return address;
 	}
 
 	/**
 	 * 
-	 * @param country
+	 * @param address
 	 */
-	public void setCountry(String country) {
-		this.country = country;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getChristmasGift() {
@@ -112,10 +141,33 @@ public class Children implements Comparable<Children>{
 		this.christmasGift = christmasGift;
 	}
 
+	/**
+	 * 
+	 * @return typeKid getTypeKid
+	 */
+	public String getTypeKid() {
+		return typeKid;
+	}
+
+	/**
+	 * 
+	 * @param typeKid
+	 */
+	public void setTypeKid(String typeKid) {
+
+	}
+
 	@Override
-    public int compareTo(Children o) {
-		if(edad<o.edad){
+	public String toString() {
+		return "Name: " + name + "\nLast name: " + lastName + "\nAge: " + age + "\nCountry: " + country + "\nCity: "
+				+ city + "\nAddress: " + address + "\nchristmasGift: " + christmasGift + "\nType kid: " + typeKid
+				+ "\n";
+	}
+
+	@Override
+	public int compareTo(Children o) {
+		if (age < o.age) {
 		}
-        return this.name.compareTo(o.name);
+		return this.name.compareTo(o.name);
 	}
 }
