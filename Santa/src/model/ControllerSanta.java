@@ -35,6 +35,10 @@ public class ControllerSanta {
 		}
 	}
 
+	/**
+	 * 
+	 * @param name
+	 */
 	public void moveChild(String name) {
 		boolean flag = false;
 		String message = "It's not founded";
@@ -61,8 +65,8 @@ public class ControllerSanta {
 
 	/**
 	 * 
-	 * @param name
-	 * @param lastName
+	 * @param typeKid
+	 * 
 	 */
 	public void showChildren(String typeKid) {
 		if (typeKid.equalsIgnoreCase("GOOD")) {

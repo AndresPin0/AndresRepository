@@ -38,7 +38,7 @@ public class SantaClaus {
 
 	/**
 	 * 
-	 * @param option
+	 * @param option It's the option entered by the user
 	 */
 	public void menu(int option) {
 		switch (option) {
@@ -96,7 +96,8 @@ public class SantaClaus {
 	}// addChild
 
 	/**
-	 * 
+	 * This method is to move a child, the user enter the name of the user, then it
+	 * takes it to the moveChild method
 	 */
 	public void moveChild() {
 		System.out.println("What's the name of the child you want to move?");
@@ -106,10 +107,10 @@ public class SantaClaus {
 	}
 
 	/**
-	 * 
+	 * This method is to show the list of Goodkids, or badkids
 	 */
 	public void showList() {
-		System.out.println("What list do you want to see?");
+		System.out.println("What list do you want to see? (GOOD/BAD)");
 		String lista = sc.nextLine();
 		control.showChildren(lista);
 

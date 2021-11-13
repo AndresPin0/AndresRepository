@@ -15,10 +15,11 @@ public class Children implements Comparable<Children> {
 	private String typeKid;
 
 	/**
+	 * Children's contructor
 	 * 
 	 * @param name
 	 * @param lastName
-	 * @param edad
+	 * @param age
 	 * @param address
 	 * @param city
 	 * @param country
@@ -39,7 +40,7 @@ public class Children implements Comparable<Children> {
 
 	/**
 	 * 
-	 * @return name
+	 * @return name ...
 	 */
 	public String getName() {
 		return name;
@@ -67,7 +68,7 @@ public class Children implements Comparable<Children> {
 
 	/**
 	 * 
-	 * @return edad
+	 * @return age ...
 	 */
 	public int getAge() {
 		return age;
@@ -75,15 +76,15 @@ public class Children implements Comparable<Children> {
 
 	/**
 	 * 
-	 * @param edad
+	 * @param age
 	 */
-	public void setAge(int edad) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
 	/**
 	 * 
-	 * @return
+	 * @return country ...
 	 */
 	public String getCountry() {
 		return country;
@@ -99,7 +100,7 @@ public class Children implements Comparable<Children> {
 
 	/**
 	 * 
-	 * @return
+	 * @return city ...
 	 */
 	public String getCity() {
 		return city;
@@ -115,7 +116,7 @@ public class Children implements Comparable<Children> {
 
 	/**
 	 * 
-	 * @return
+	 * @return address ...
 	 */
 	public String getAddress() {
 		return address;
