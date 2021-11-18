@@ -17,17 +17,11 @@ public class GestorSeries {
 			return false;
 		}
 	}
-
-	public boolean checkName(String seriesName) {
-		if (cont != 0) {
-			for (int i = 0; i < cont; i++) {
-				if (seriesName.equals(productSeries[i].getSeriesName())) {
-					return false;
-				}
-			}
-		}
-		return true;
-	}
+	/*
+	 * public boolean checkName(String seriesName) { if (cont != 0) { for (int i =
+	 * 0; i < cont; i++) { if (seriesName.equals(productSeries[i].getSeriesName()))
+	 * { return false; } } } return true; }
+	 */
 
 	public int getAmountSeries() {
 		return cont;
