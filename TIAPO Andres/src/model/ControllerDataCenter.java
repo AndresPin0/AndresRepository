@@ -53,7 +53,7 @@ public class ControllerDataCenter{
         msg += "Servers: \n";
         for(int i = 0; i < rooms.length; i++){
             for(int j = 0; j<rooms[0].length; j++){
-            msg += "["+rooms[i][j].getNum()+ " " + rooms[i][j].getStatus() + "]";
+            msg += "["+rooms[i][j].getStatus() + "]";
             }
             msg += "\n";
         }
